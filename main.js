@@ -14,6 +14,7 @@ function newImage(getImage)
 {
 	// para enviar imagens
 	fabric.Image.fromURL(get_image, function(img){
+		blockImageObject=img
 		blockImageObject.scaletoWidth(blockImageWidth);
 		blockImageObject.scaletoHeight(blockImageHeight);
 		blockImageObject.set({
