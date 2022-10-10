@@ -1,4 +1,4 @@
-const { fabric } = require("./fabric");
+
 
 // Create canvas variable
 var canvas= new fabric.Canvas("myCanvas")
@@ -13,14 +13,15 @@ var blockImageObject= "";
 function newImage(getImage)
 {
 	// para enviar imagens
-	fabric.Image.fromURL(get_image, function(img){
+	fabric.Image.fromURL(getImage, function(img){
 		blockImageObject=img
-		blockImageObject.scaletoWidth(blockImageWidth);
-		blockImageObject.scaletoHeight(blockImageHeight);
+		blockImageObject.scaleToWidth(blockImageWidth);
+		blockImageObject.scaleToHeight(blockImageHeight);
 		blockImageObject.set({
 			top:blockY,
 			left:blockX
 		});
+		canvas.add(blockImageObject);
 	});
 }
 
@@ -31,17 +32,17 @@ function myKeyDown(e)
 keyPressed = e.keyCode;
 console.log(keyPressed);
 
-	if(keyPressed == '?') // adicione os códigos adequados às teclas
+	if(keyPressed == '69') // adicione os códigos adequados às teclas
 	{
 		// enviar ranger escarlate
-		new_image(rr1.png);
+		newImage("rr1.png");
 		console.log("e");
 	}
 	if(keyPressed == '86')
 	{
 		blockX = 200;
 		// enviar ranger verde
-		new_image(gr.png);
+		newImage("gr.png");
 		console.log("v");
 	}
 	
@@ -49,21 +50,21 @@ console.log(keyPressed);
 	{
 		blockX =350;
 		// enviar ranger amarelo
-		new_image(yr.png);
+		newImage("yr.png");
 		console.log("a");
 	}
 	if(keyPressed == '82')
 	{
 		blockX = 600;
 		// enviar ranger rosa
-		new_image(pr.png);
+		newImage("pr.png");
 		console.log("r");
 	}
 	if(keyPressed == '73')
 	{
 		blockX = 700;
 	// enviar ranger índigo
-	new_image(br.png);
+	newImage("br.png");
 		console.log("b");
 	}
 	
